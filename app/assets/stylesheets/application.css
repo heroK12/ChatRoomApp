@@ -1,0 +1,146 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+  box-sizing: border-box;
+}
+
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial, sans-serif";
+  background-color: #e6e6e6;
+  letter-spacing : 0.2em;
+}
+
+#header{
+  padding: 30px 10% 10px;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+
+#header h1{
+  margin: 0; padding: 0;
+  font-size: 20px;
+  color: #ddd;
+}
+
+#header a{
+  text-decoration: none;
+  color: #ddd;
+}
+
+#header ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+#header li {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+#header nav {
+  margin: 0 0 0 auto;
+}
+
+@media screen and (max-width: 960px) {
+  #header #navi {
+    transition: all .6s;
+    overflow-y: auto;
+    padding: 40px 0 0 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 200;
+    top: 0;
+    right: -320px;
+    background-color: #333;
+    position: fixed;
+  }
+  #header .nav_btn {
+    width: 44px;
+    height: 44px;
+    z-index: 300;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    position: absolute;
+    position: fixed;
+  }
+  
+  .ham_line {
+    transition: all .6s;
+    width: 34px;
+    height: 2px;
+    left: 5px;
+    background-color: #ddd;
+    position: absolute;
+  }
+  
+  .ham_line1 { top: 10px; }
+  .ham_line2 { top: 21px; }
+  .ham_line3 { top: 32px; }
+  
+  .nav_bg {
+    opacity: 0;
+    transition: all .6s;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: #000;
+    cursor: pointer;
+    position: fixed;
+  }
+  
+  .nav_open #header #navi { right: 0; }
+  
+  #header ul {
+    list-style: none;
+    margin: 0;
+    display: block;
+  }
+
+  #header li {
+    padding: 20px 0px;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .nav_open .nav_bg {
+    opacity: .8;
+    visibility: visible;
+  }
+  .nav_open .ham_line1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .nav_open .ham_line2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav_open .ham_line3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatRoomApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  <div id="header">
+    <a href="/rooms"><h1>ChatRoomApp</h1></a>
+    <nav>
+      <ul id="navi">
+        <li><a href="/rooms">トップ</li>
+        <li><a href="/rooms/new">ルーム作成</li>
+        <li><a href="#">ログイン</a></li>
+        <li><a href="#">新規登録</a></li>
+      </ul>
+    </nav>
+    <div class="nav_btn" id="nav_btn">
+      <span class="ham_line ham_line1"></span>
+      <span class="ham_line ham_line2"></span>
+      <span class="ham_line ham_line3"></span>
+    </div>
+    <div class="nav_bg" id="nav_bg"></div>
+  </div>
+  <%= yield %>
+  <%= javascript_pack_tag 'home/home' %>
+  </body>
+</html>

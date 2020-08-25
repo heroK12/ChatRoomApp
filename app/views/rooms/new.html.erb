@@ -1,0 +1,15 @@
+<h1>Room作成</h1>
+
+<%= form_with model:@room,local: true, url: rooms_path do |f| %>
+  <% if @room.errors.any? %>
+    <%= @room.errors.count %>個のエラーがあります。<br>
+    <% @room.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :text %>
+  <%= f.text_area :text %><br>
+  <%= f.submit %>
+<% end %>
