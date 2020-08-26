@@ -13,10 +13,16 @@
     <a href="/rooms"><h1>ChatRoomApp</h1></a>
     <nav>
       <ul id="navi">
-        <li><a href="/rooms">トップ</li>
-        <li><a href="/rooms/new">ルーム作成</li>
-        <li><a href="#">ログイン</a></li>
-        <li><a href="#">新規登録</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "トップ", rooms_path %></li>
+          <li><%= link_to "ルーム作成", new_room_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "トップ", rooms_path %></li>
+          <li><%= link_to "ルーム作成", new_room_path %></li>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
       </ul>
     </nav>
     <div class="nav_btn" id="nav_btn">
@@ -26,6 +32,8 @@
     </div>
     <div class="nav_bg" id="nav_bg"></div>
   </div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= yield %>
   <%= javascript_pack_tag 'home/home' %>
   </body>
