@@ -1,24 +1,12 @@
-# README
+## タイトル
+Railsでルーム機能を備えたチャットサイト(製作途中のため未完成)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 完了
+・Home画面の作成(レスポンシブデザイン対応)
+・ルーム作成
+・各ルームサイト
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 今後の予定
+ ・チャット機能の実装
+ ・ユーザー機能
+ ・専用ルームの機能
