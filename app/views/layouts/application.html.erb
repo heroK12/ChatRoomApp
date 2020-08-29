@@ -32,8 +32,13 @@
     </div>
     <div class="nav_bg" id="nav_bg"></div>
   </div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div id="flash_box">
+    <% if flash[:notice] %>
+      <p id="notice"><%= notice %></p>
+    <% elsif flash[:alert] %>
+      <p id="alert"><%= alert %></p>
+    <% end %>
+  </div>
   <%= yield %>
   <%= javascript_pack_tag 'home/home' %>
   </body>

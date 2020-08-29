@@ -11,9 +11,15 @@ import consumer from "./consumer"
 
   received(data) {
     if (data['user_id'] == $('#user_room').data('user_id')) {
-      $('#messageBox').append('<p id="new-message">'+data['message']+'</p>');
+      $('#messageBox').append(
+        '<p id="namee">' + data['user_name'] + ':' + '</p>',
+        '<p id="new-message">'+data['message']+'</p>'
+        );
     } else {
-      $('#messageBox').append('<p id="new-message">'+data['message']+'</p>');
+      $('#messageBox').append(
+        '<p id="namee">' + data['user_name'] + ':' + '</p>',
+        '<p id="new-message">'+data['message']+'</p>'
+        );
     }
   },
 

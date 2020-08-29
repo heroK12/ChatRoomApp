@@ -60,6 +60,23 @@
   margin: 0 0 0 auto;
 }
 
+#flash_box{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+}
+
+#notice{
+  margin: 0px;
+  background-color: #5cb85c;
+}
+
+#alert{
+  margin: 0px;
+  background-color: #f0ad4e;
+}
+
 @media screen and (max-width: 960px) {
   #header #navi {
     transition: all .6s;

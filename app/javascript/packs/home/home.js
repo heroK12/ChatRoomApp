@@ -11,3 +11,7 @@ function toggleNav() {
   });
 }
 toggleNav();
+
+$(function(){
+  setTimeout("$('#flash_box').fadeOut('slow')", 2000);
+});

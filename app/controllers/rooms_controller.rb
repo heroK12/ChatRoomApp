@@ -17,8 +17,10 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
 
     if @room.save
-    redirect_to room_path(@room)
+      flash[:notice] = "ルームの作成に成功しました"
+      redirect_to room_path(@room)
     else
+      flash.now[:alert] = "ルーム作成に失敗しました"
       render 'new'
     end
   end

@@ -15,7 +15,9 @@ class RoomChannel < ApplicationCable::Channel
       room_id: data["user_room"]["room_id"]
     )
     if message.save
-      ActionCable.server.broadcast "room_channel_#{params['room_id']}", message: data['message'], user_id: data['user_room']['user_id']
+
+      msg = Message.find_by(user_id: data['user_room']['user_id'])
+      ActionCable.server.broadcast "room_channel_#{params['room_id']}", message: data['message'], user_id: data['user_room']['user_id'], user_name: msg.user.name
     end
   end
 end
